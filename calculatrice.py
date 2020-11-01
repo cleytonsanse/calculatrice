@@ -7,7 +7,7 @@ from operation.division import diviser
 # Définir une fonction nommé "demander_nombre" qui demande à l'utilisateur un nombre
 # et la retourne (pour la mettre dans une variable)
 def demander_nombre():
-    return float(input('Saisir un nombre:: '))
+    return float(input('Saisir un nombre: '))
 
 # Demander à l'utilisateur de saisir un nombre
 nombre1 = demander_nombre()
