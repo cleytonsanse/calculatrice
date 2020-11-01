@@ -4,8 +4,8 @@ from operation.multiplication import multiplier
 from operation.division import diviser
 
 
-# Définir une fonction nommé "demander_nombre" qui demande à l'utilisateur un nombre
-# et la retourne (pour la mettre dans une variable)
+# Définir une fonction nommée "demander_nombre" qui demande à l'utilisateur un nombre
+# et le retourne (pour la mettre dans une variable)
 def demander_nombre():
     return float(input('Saisir un nombre: '))
 
