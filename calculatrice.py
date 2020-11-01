@@ -4,8 +4,13 @@ from operation.multiplication import multiplier
 from operation.division import diviser
 
 
+# Définir une fonction nommé "demander_nombre" qui demande à l'utilisateur un nombre
+# et la retourne (pour la mettre dans une variable)
+def demander_nombre():
+    return float(input('Saisir un nombre:: '))
+
 # Demander à l'utilisateur de saisir un nombre
-nombre1 = float(input('Saisir un nombre: '))
+nombre1 = demander_nombre()
 
 # Demander à l'utilisateur de saisir l'opération à réaliser
 operation_saisie = input('Saisir une opération (+, -, *, /): ')
@@ -16,7 +21,7 @@ if operation_saisie not in liste_operation_valide:
     exit()  # Quitte l'application
 
 # Demander à l'utilisateur de saisir un nombre
-nombre2 = float(input('Saisir un nombre: '))
+nombre2 = demander_nombre()
 
 # Détecter la saisie (de la touche) "="
 touche_saisie = input()
