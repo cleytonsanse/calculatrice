@@ -11,9 +11,9 @@
 # print(quotient) # print() est une fonction
 
 # définir la fonction "diviser" qui prend comme paramètres a et b
-# et qui affiche le résultat de la division de a par b
+# et qui retourne le résultat de la division de a par b
 def diviser(a, b):
-    print(a/b)   
+    return a/b   
 
 # faire appel à la fonction "diviser" avec comme paramètre dividende et diviseur
 # diviser(dividende, diviseur)

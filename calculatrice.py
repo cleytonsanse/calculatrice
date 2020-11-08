@@ -9,29 +9,50 @@ from operation.division import diviser
 def demander_nombre():
     return float(input('Saisir un nombre: '))
 
-# Demander à l'utilisateur de saisir un nombre
-nombre1 = demander_nombre()
+# Déclarer une variable nommée memoire pour stocker une valeur en mémoire
+memoire = 0.0
 
-# Demander à l'utilisateur de saisir l'opération à réaliser
-operation_saisie = input('Saisir une opération (+, -, *, /): ')
+# Mémoriser la saisie de l'utilisateur
+# Au début, la saisie est vide car l'utilisateur n'a rien saisie
+saisie_utilisateur = '' # texte vide
 
-# Vérifier que l'information saisie par l'utilisateur est valide
-liste_operation_valide = ['+', '-', '*', '/']
-if operation_saisie not in liste_operation_valide:
-    exit()  # Quitte l'application
+# Condition à remplir pour que la calculatrice reste allumé (fonctionne)
+while saisie_utilisateur.lower() != 'x':  # ! -> négatif
+    # Afficher la valeur de ce qui est en mémoire
+    print('MEM: ' + str(memoire))
+    
+    # Afficher la saisie de l'utilisateur
+    # print(saisie_utilisateur)
 
-# Demander à l'utilisateur de saisir un nombre
-nombre2 = demander_nombre()
+    # Demander à l'utilisateur de saisir un nombre
+    nombre1 = demander_nombre()
 
-# Détecter la saisie (de la touche) "="
-touche_saisie = input()
-if touche_saisie == '=':
-    # Afficher le résultat de l'opération
-    if operation_saisie == '+':
-        additioner(nombre1, nombre2)
-    if operation_saisie == '-':
-        soustraire(nombre1, nombre2)
-    if operation_saisie == '*':
-        multiplier(nombre1, nombre2)
-    if operation_saisie == '/':
-        diviser(nombre1, nombre2)   
+    # Demander à l'utilisateur de saisir l'opération à réaliser
+    operation_saisie = input('Saisir une opération (+, -, *, /): ')
+
+    # Vérifier que l'information saisie par l'utilisateur est valide
+    liste_operation_valide = ['+', '-', '*', '/']
+    if operation_saisie not in liste_operation_valide:
+        exit()  # Quitte l'application
+
+    # Demander à l'utilisateur de saisir un nombre
+    nombre2 = demander_nombre()
+
+    # Détecter la saisie (de la touche) "="
+    saisie_utilisateur = input('(x pour quitter, = pour calculer, m+ pour ajouter en mémoire): ')
+    resultat = 0.0
+    if saisie_utilisateur in ['=', 'm+']:
+        # Afficher le résultat de l'opération
+        if operation_saisie == '+':
+            resultat = additioner(nombre1, nombre2)
+        elif operation_saisie == '-':  # elif = else if = sinon si
+            resultat = soustraire(nombre1, nombre2)
+        elif operation_saisie == '*':
+            resultat = multiplier(nombre1, nombre2)
+        elif operation_saisie == '/':
+            resultat = diviser(nombre1, nombre2)
+        if saisie_utilisateur == 'm+':
+            # memoire = memoire+resultat # 1 + 3 -> 1 = memoire, 3 = resultat -> memoire+resultat
+            memoire += resultat
+
+print('Au revoir.')

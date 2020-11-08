@@ -11,9 +11,9 @@
 # print(produit) # print() est une fonction
 
 # définir la fonction "multiplier" qui prend comme paramètres a et b
-# et qui affiche le résultat de la multiplication de a par b
+# et qui retourne le résultat de la multiplication de a par b
 def multiplier(a, b):
-    print(a*b)
+    return a*b
 
 # faire appel à la fonction "multiplier" avec comme paramètre multiplicande et multiplicateur
 # multiplier(multiplicande, multiplicateur)

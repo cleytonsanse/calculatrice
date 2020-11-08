@@ -11,9 +11,9 @@
 #print(somme) # print() est une fonction qui permet d'afficher la valeur d'une variable
 
 # définir la fonction "additioner" qui prend comme paramètres a et b
-# et qui affiche le résultat de l'addition de a et b
+# et qui retourne le résultat de l'addition de a et b
 def additioner(a, b):
-    print(a+b)
+    return a+b
 
 # faire appel à la fonction "additionner" avec comme paramètre terme1 et terme2
 #additioner(terme1, terme2)

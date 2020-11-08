@@ -11,9 +11,9 @@
 # print(difference) # print() est une fonction
 
 # définir la fonction "soustraire" qui prend comme paramètres a et b
-# et qui affiche le résultat de la soustraction de a et b
+# et qui retourne le résultat de la soustraction de a et b
 def soustraire(a, b):
-    print(a-b)
+    return a-b
 
 # faire appel à la fonction "soustraire" avec comme paramètre terme1 et terme2
 # soustraire(terme1, terme2)
