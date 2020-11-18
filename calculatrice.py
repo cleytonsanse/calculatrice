@@ -51,7 +51,9 @@ while saisie_utilisateur.lower() != 'x':  # ! -> négatif
             resultat = multiplier(nombre1, nombre2)
         elif operation_saisie == '/':
             resultat = diviser(nombre1, nombre2)
-        if saisie_utilisateur == 'm+':
+        if saisie_utilisateur == '=':
+            print(resultat)
+        elif saisie_utilisateur == 'm+':
             # memoire = memoire+resultat # 1 + 3 -> 1 = memoire, 3 = resultat -> memoire+resultat
             memoire += resultat
 
