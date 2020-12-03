@@ -25,7 +25,10 @@ while saisie_utilisateur.lower() != 'x':  # ! -> négatif
     # print(saisie_utilisateur)
 
     # Demander à l'utilisateur de saisir un nombre
-    nombre1 = demander_nombre()
+    if saisie_utilisateur == 'mr':
+        nombre1 = memoire
+    else:
+        nombre1 = demander_nombre()
 
     # Demander à l'utilisateur de saisir l'opération à réaliser
     operation_saisie = input('Saisir une opération (+, -, *, /): ')
@@ -39,9 +42,10 @@ while saisie_utilisateur.lower() != 'x':  # ! -> négatif
     nombre2 = demander_nombre()
 
     # Détecter la saisie (de la touche) "="
-    saisie_utilisateur = input('(x pour quitter, = pour calculer, m+ pour ajouter en mémoire, m- pour retirer de la en mémoire):')
+    saisie_utilisateur = input('(x pour quitter, = pour calculer, m+ pour ajouter en mémoire, m- pour retirer de la en mémoire, mr pour retrouver la valeur en mémoire): ')
+    
     resultat = 0.0
-    if saisie_utilisateur in ['=', 'm+', 'm-']:
+    if saisie_utilisateur in ['=', 'm+', 'm-', 'mr']:
         # Afficher le résultat de l'opération
         if operation_saisie == '+':
             resultat = additioner(nombre1, nombre2)
@@ -51,6 +55,7 @@ while saisie_utilisateur.lower() != 'x':  # ! -> négatif
             resultat = multiplier(nombre1, nombre2)
         elif operation_saisie == '/':
             resultat = diviser(nombre1, nombre2)
+
         if saisie_utilisateur == '=':
             print(resultat)
         elif saisie_utilisateur == 'm+':
