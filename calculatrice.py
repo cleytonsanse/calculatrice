@@ -42,10 +42,10 @@ while saisie_utilisateur.lower() != 'x':  # ! -> négatif
     nombre2 = demander_nombre()
 
     # Détecter la saisie (de la touche) "="
-    saisie_utilisateur = input('(x pour quitter, = pour calculer, m+ pour ajouter en mémoire, m- pour retirer de la en mémoire, mr pour retrouver la valeur en mémoire): ')
+    saisie_utilisateur = input('(x pour quitter, = pour calculer, m+ pour ajouter en mémoire, m- pour retirer de la en mémoire, mr pour retrouver la valeur en mémoire, mc pour effacer la valeur en mémoire): ')
     
     resultat = 0.0
-    if saisie_utilisateur in ['=', 'm+', 'm-', 'mr']:
+    if saisie_utilisateur in ['=', 'm+', 'm-', 'mr', 'mc']:
         # Afficher le résultat de l'opération
         if operation_saisie == '+':
             resultat = additioner(nombre1, nombre2)
@@ -63,4 +63,6 @@ while saisie_utilisateur.lower() != 'x':  # ! -> négatif
             memoire += resultat
         elif saisie_utilisateur == 'm-':
             memoire -= resultat
-print('Au revoir.')
+        elif saisie_utilisateur == 'mc':
+            memoire = 0.0
+print( 'Au revoir.')
